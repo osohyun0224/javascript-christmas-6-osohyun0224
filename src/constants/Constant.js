@@ -20,4 +20,12 @@ const D_DAY_DISCOUNT = Object.freeze({
   incrementPerDay: 100
 });
 
-export { WOOTECO_MENU_PRICES, D_DAY_DISCOUNT };
+const WOOTECO_MAIN_MENUS = Object.freeze([
+  "티본스테이크", "바비큐립", "해산물파스타", "크리스마스파스타"
+]);
+
+const WOOTECO_DESSERT_MENUS = Object.freeze([
+  "초코케이크", "아이스크림"
+]);
+
+export { WOOTECO_MENU_PRICES, D_DAY_DISCOUNT, WOOTECO_MAIN_MENUS, WOOTECO_DESSERT_MENUS };
