@@ -1,9 +1,10 @@
+import { Console } from "@woowacourse/mission-utils";
+import { GUIDE_MESSAGE } from "../constants/Message";
+
 const OutputView = {
-    printMenu() {
-        Console.print("<주문 메뉴>");
-        // ...
+    printIntroMessage() {
+    Console.print(GUIDE_MESSAGE.intro);
     }
-    // ...
 }
 
 export default OutputView;
