@@ -17,12 +17,9 @@ const EVENT_TITLE = Object.freeze({
   eventBadge: "<12월 이벤트 배지>"
 });
 
-const VISIT_DATE_ERROR_MESSGAE = Object.freeze({
-  invalidDate: "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요."
-});
-
-const ORDER_ERROR_MESSAGE = Object.freeze({
+const ERROR_MESSAGE = Object.freeze({
+  invalidDate: "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.",
   invalidOrder: "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요."
 });
 
-export { GUIDE_MESSAGE, EVENT_TITLE, VISIT_DATE_ERROR_MESSGAE, ORDER_ERROR_MESSAGE }
+export { GUIDE_MESSAGE, EVENT_TITLE, ERROR_MESSAGE }

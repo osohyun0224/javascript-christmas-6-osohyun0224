@@ -1,4 +1,4 @@
-import { VISIT_DATE_ERROR_MESSGAE } from "../constants/Message";
+import { ERROR_MESSAGE } from "../constants/Message";
 
 class VisitDateValidator {
   #visitDate;
@@ -14,14 +14,14 @@ class VisitDateValidator {
 
   #validateIsNumber() {
       if (isNaN(Number(this.#visitDate))) {
-          throw new Error(VISIT_DATE_ERROR_MESSGAE.invalidDate);
+          throw new Error(ERROR_MESSAGE.invalidDate);
       }
   }
 
   #validateDateRange() {
       const date = Number(this.#visitDate);
       if (date < 1 || date > 31) {
-          throw new Error(VISIT_DATE_ERROR_MESSGAE.invalidDate);
+          throw new Error(ERROR_MESSAGE.invalidDate);
       }
   }
 }
