@@ -41,7 +41,7 @@ class CalculateDailyDiscount {
   }
 
   #isWeekend(visitDate) {
-    return visitDate % 7 === 0 || visitDate % 7 === 6;
+    return visitDate % 7 === 5 || visitDate % 7 === 6;
   }
 }
 
