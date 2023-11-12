@@ -1,10 +1,16 @@
-import InputView from "./views/InputView";
+import { Console } from "@woowacourse/mission-utils";
+import InputView from "./views/InputView"
 import OutputView from "./views/OutputView";
 
 class App {
+
   async run() {
     OutputView.printIntroMessage();
-    const visitDate = await InputView.readDate();
+    try {
+        const visitDate = await InputView.readDate();
+    } catch (error) {
+        Console.print(error.message);
+    }
   }
 }
 
