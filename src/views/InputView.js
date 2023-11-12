@@ -1,6 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 import { GUIDE_MESSAGE } from "../constants/Message";
 import VisitDateValidator from "../validate/VisitDateValidator";
+import OrderMenusValidator from "../validate/OrderMenusValidator";
 
 const InputView = {
     async readDate() {
@@ -17,9 +18,19 @@ const InputView = {
     },
 
     async readOrder() {
-            const input = await Console.readLineAsync(GUIDE_MESSAGE.insertMenus);
+        while (true) {
+          try {
+            Console.print(GUIDE_MESSAGE.insertMenus);
+            const input = await Console.readLineAsync();
             const orderItems = input.split(',').map(item => item.trim().split('-'));
+            const validator = new OrderMenusValidator(orderItems);
+            validator.validateOrder();
+            return orderItems;
+          } catch (error) {
+            Console.print(error.message);
+          }
+        }
+      }
     }
-}
 
 export default InputView;
