@@ -13,4 +13,11 @@ const WOOTECO_MENU_PRICES = Object.freeze({
   "샴페인": 25000
 });
 
-export { WOOTECO_MENU_PRICES }
+const D_DAY_DISCOUNT = Object.freeze({
+  startDay: 1,
+  endDay: 25,
+  baseDiscount: 1000,
+  incrementPerDay: 100
+});
+
+export { WOOTECO_MENU_PRICES, D_DAY_DISCOUNT };
