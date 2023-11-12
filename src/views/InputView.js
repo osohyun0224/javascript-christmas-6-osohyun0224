@@ -14,6 +14,11 @@ const InputView = {
                 Console.print(error.message);
             }
         }
+    },
+
+    async readOrder() {
+            const input = await Console.readLineAsync(GUIDE_MESSAGE.insertMenus);
+            const orderItems = input.split(',').map(item => item.trim().split('-'));
     }
 }
 

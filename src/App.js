@@ -7,9 +7,10 @@ class App {
   async run() {
     OutputView.printIntroMessage();
     try {
-        const visitDate = await InputView.readDate();
+      const visitDate = await InputView.readDate();
+      const orderItems = await InputView.readOrder();
     } catch (error) {
-        Console.print(error.message);
+      Console.print(error.message);
     }
   }
 }
