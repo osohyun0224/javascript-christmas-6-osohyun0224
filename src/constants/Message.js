@@ -5,7 +5,8 @@ const GUIDE_MESSAGE = Object.freeze({
   startEventMonth: "12월 ",
   startEventDay: "일에 ",
   startEventGuide: "우테코 식당에서 받을 이벤트 혜택 미리 보기!",
-  unitCount: "개"
+  unitCount: "개",
+  unitMoney: "원"
 });
 
 const EVENT_TITLE = Object.freeze({

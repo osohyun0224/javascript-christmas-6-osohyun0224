@@ -52,6 +52,7 @@ class App {
 
         OutputView.printEventPreview(visitDate);
         OutputView.printOrderMenu(orderItems);
+        OutputView.printOriginTotalPrice(totalOrderAmount);
     }
 }
 
