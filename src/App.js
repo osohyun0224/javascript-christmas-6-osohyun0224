@@ -6,8 +6,8 @@ import CalculateDDayDiscount from "./domain/CalculateDDayDiscount";
 import CalculateDailyDiscount from "./domain/CalculateDailyDiscount";
 import CalculateSpecialDiscount from "./domain/CalculateSpecialDiscount";
 import CalculateGiveawayEvent from "./domain/CalculateGiveawayEvent";
+import CalculateEventBadge from "./domain/CalculateEventBadge";
 import { WOOTECO_MENU_PRICES } from "./constants/Constant";
-import { GUIDE_MESSAGE, EVENT_TITLE } from "./constants/Message";
 
 class App {
   constructor() {
@@ -17,6 +17,7 @@ class App {
     this.dailyDiscountCalculator = new CalculateDailyDiscount(this.menuPrices);
     this.specialDiscountCalculator = new CalculateSpecialDiscount();
     this.giveawayEventCalculator = new CalculateGiveawayEvent(this.menuPrices);
+    this.eventBadgeCalculator = new CalculateEventBadge();
   }
 
   async run() {
@@ -52,6 +53,9 @@ class App {
     discountsApplied.push(...giveawayDiscountsApplied);
 
     let finalAmount = totalOrderAmount - (totalDiscount - giveawayDiscount);
+    
+    let badge = this.eventBadgeCalculator.calculate(totalDiscount);
+
   }
 }
 
