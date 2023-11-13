@@ -7,6 +7,7 @@ import CalculateDailyDiscount from "./domain/CalculateDailyDiscount";
 import CalculateSpecialDiscount from "./domain/CalculateSpecialDiscount";
 import CalculateGiveawayEvent from "./domain/CalculateGiveawayEvent";
 import { WOOTECO_MENU_PRICES } from "./constants/Constant";
+import { GUIDE_MESSAGE, EVENT_TITLE } from "./constants/Message";
 
 class App {
   constructor() {
@@ -46,6 +47,11 @@ class App {
     totalDiscount += specialDiscount;
     discountsApplied.push(...specialDiscountsApplied);
 
+    const { totalDiscount: giveawayDiscount, discountsApplied: giveawayDiscountsApplied, giftedItem } = this.giveawayEventCalculator.calculate(totalOrderAmount);
+    totalDiscount += giveawayDiscount;
+    discountsApplied.push(...giveawayDiscountsApplied);
+
+    let finalAmount = totalOrderAmount - (totalDiscount - giveawayDiscount);
   }
 }
 
