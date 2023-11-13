@@ -56,6 +56,7 @@ class App {
         OutputView.printGiveawayMenu(giftedItem);
         OutputView.printBenefitDetails(discountsApplied);
         OutputView.printTotalBenefitAmount(totalDiscount);
+        OutputView.printDiscountedTotalAmount(finalAmount);
     }
 }
 

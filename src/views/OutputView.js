@@ -42,7 +42,10 @@ const OutputView = {
     printTotalBenefitAmount(totalDiscount) {
         Console.print(`${EVENT_TITLE.totalBenefitPrice}\n-${formatCurrency(totalDiscount)}${GUIDE_MESSAGE.unitMoney}\n`);
     },
-    
+
+    printDiscountedTotalAmount(finalAmount) {
+        Console.print(`${EVENT_TITLE.discountedTotalPrice}\n${formatCurrency(finalAmount)}${GUIDE_MESSAGE.unitMoney}\n`);
+    },
 };
 
 export default OutputView;
