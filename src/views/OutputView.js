@@ -25,6 +25,21 @@ const OutputView = {
     printGiveawayMenu(giftedItem) {
         Console.print(`${EVENT_TITLE.giveawayMenu}\n${giftedItem}\n\n`);
     },
+
+    printBenefitDetails(discountsApplied) {
+        if (discountsApplied.length > 0) {
+            const formattedDiscounts = discountsApplied.map(discount => {
+                const discountAmount = parseInt(discount.match(/-?\d+/)[0], 10);
+                return `${discount.replace(/-?\d+/, formatCurrency(discountAmount))}${GUIDE_MESSAGE.unitMoney}`;
+            });
+            Console.print(`${EVENT_TITLE.benefitDetails}\n${formattedDiscounts.join('\n')}`);
+            return;
+        }
+        Console.print(`${EVENT_TITLE.benefitDetails}`);
+        Console.print(`${GUIDE_MESSAGE.nothing}`);
+    },
+
+    
 };
 
 export default OutputView;

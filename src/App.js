@@ -54,6 +54,7 @@ class App {
         OutputView.printOrderMenu(orderItems);
         OutputView.printOriginTotalPrice(totalOrderAmount);
         OutputView.printGiveawayMenu(giftedItem);
+        OutputView.printBenefitDetails(discountsApplied);
     }
 }
 
