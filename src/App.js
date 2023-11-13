@@ -1,11 +1,12 @@
 import { Console } from "@woowacourse/mission-utils";
 import InputView from "./views/InputView";
 import OutputView from "./views/OutputView";
-import { WOOTECO_MENU_PRICES } from "./constants/Constant";
 import CalculateOriginTotalPrice from "./domain/CalculateOriginTotalPrice";
 import CalculateDDayDiscount from "./domain/CalculateDDayDiscount";
 import CalculateDailyDiscount from "./domain/CalculateDailyDiscount";
 import CalculateSpecialDiscount from "./domain/CalculateSpecialDiscount";
+import CalculateGiveawayEvent from "./domain/CalculateGiveawayEvent";
+import { WOOTECO_MENU_PRICES } from "./constants/Constant";
 
 class App {
   constructor() {
@@ -14,6 +15,7 @@ class App {
     this.dDayDiscountCalculator = new CalculateDDayDiscount();
     this.dailyDiscountCalculator = new CalculateDailyDiscount(this.menuPrices);
     this.specialDiscountCalculator = new CalculateSpecialDiscount();
+    this.giveawayEventCalculator = new CalculateGiveawayEvent(this.menuPrices);
   }
 
   async run() {
@@ -43,6 +45,7 @@ class App {
     const { totalDiscount: specialDiscount, discountsApplied: specialDiscountsApplied } = this.specialDiscountCalculator.calculate(visitDate);
     totalDiscount += specialDiscount;
     discountsApplied.push(...specialDiscountsApplied);
+
   }
 }
 
