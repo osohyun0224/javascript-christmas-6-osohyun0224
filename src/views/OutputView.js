@@ -21,6 +21,10 @@ const OutputView = {
     printOriginTotalPrice(totalOrderAmount) {
         Console.print(`${EVENT_TITLE.originTotalPrice}\n${formatCurrency(totalOrderAmount)}${GUIDE_MESSAGE.unitMoney}\n`);
     },
+
+    printGiveawayMenu(giftedItem) {
+        Console.print(`${EVENT_TITLE.giveawayMenu}\n${giftedItem}\n\n`);
+    },
 };
 
 export default OutputView;

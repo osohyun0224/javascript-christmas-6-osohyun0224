@@ -12,7 +12,7 @@ const GUIDE_MESSAGE = Object.freeze({
 const EVENT_TITLE = Object.freeze({
   orderMenu: "<주문 메뉴>",
   originTotalPrice: "<할인 전 총주문 금액>",
-  giveawayMeue: "<증정 메뉴>",
+  giveawayMenu: "<증정 메뉴>",
   benefitDetails: "<혜택 내역>",
   totalBenefitPrice: "<총혜택 금액>",
   discountedTotalPrice: "<할인 후 예상 결제 금액>",
