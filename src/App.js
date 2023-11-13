@@ -57,6 +57,7 @@ class App {
         OutputView.printBenefitDetails(discountsApplied);
         OutputView.printTotalBenefitAmount(totalDiscount);
         OutputView.printDiscountedTotalAmount(finalAmount);
+        OutputView.printEventBadge(badge);
     }
 }
 

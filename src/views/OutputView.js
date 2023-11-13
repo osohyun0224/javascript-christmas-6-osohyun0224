@@ -46,6 +46,10 @@ const OutputView = {
     printDiscountedTotalAmount(finalAmount) {
         Console.print(`${EVENT_TITLE.discountedTotalPrice}\n${formatCurrency(finalAmount)}${GUIDE_MESSAGE.unitMoney}\n`);
     },
+
+    printEventBadge(badge) {
+        Console.print(`${EVENT_TITLE.eventBadge}\n${badge}`);
+    }
 };
 
 export default OutputView;
