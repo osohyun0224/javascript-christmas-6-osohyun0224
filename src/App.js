@@ -51,6 +51,7 @@ class App {
         let badge = this.eventBadgeCalculator.calculate(totalDiscount);
 
         OutputView.printEventPreview(visitDate);
+        OutputView.printOrderMenu(orderItems);
     }
 }
 
