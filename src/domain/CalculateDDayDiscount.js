@@ -1,4 +1,5 @@
-import { D_DAY_DISCOUNT } from "../constants/Constant"
+import { D_DAY_DISCOUNT } from "../constants/Constant";
+import { DISCOUNT_LABELS } from "../constants/Message";
 
 class CalculateDDayDiscount {
   #startDay = D_DAY_DISCOUNT.startDay;
@@ -11,7 +12,7 @@ class CalculateDDayDiscount {
       const discountAmount = this.#calculateDiscount(visitDate);
       return {
         totalDiscount: discountAmount,
-        discountDetail: `크리스마스 디데이 할인: -${discountAmount}`
+        discountDetail: `${DISCOUNT_LABELS.dDayDiscount}${discountAmount}`
       };
     }
     return { totalDiscount: 0, discountDetail: '' };

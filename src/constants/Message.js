@@ -26,6 +26,7 @@ const ERROR_MESSAGE = Object.freeze({
 });
 
 const DISCOUNT_LABELS = Object.freeze({
+  dDayDiscount: "크리스마스 디데이 할인: -",  
   specialDiscount: "특별 할인: -",
   giveawayEvent: "증정 이벤트: -",
   weekendDiscount: "주말 할인: -",
