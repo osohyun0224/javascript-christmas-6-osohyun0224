@@ -8,9 +8,13 @@ class CalculateDDayDiscount {
 
   calculate(visitDate) {
     if (this.#isEligibleForDiscount(visitDate)) {
-      return this.#calculateDiscount(visitDate);
+      const discountAmount = this.#calculateDiscount(visitDate);
+      return {
+        totalDiscount: discountAmount,
+        discountDetail: `크리스마스 디데이 할인: -${discountAmount}`
+      };
     }
-    return 0;
+    return { totalDiscount: 0, discountDetail: '' };
   }
 
   #isEligibleForDiscount(visitDate) {

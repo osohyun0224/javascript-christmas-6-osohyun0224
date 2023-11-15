@@ -41,11 +41,13 @@ class ChristmasController {
 
     #calculateResult(visitDate, orderItems) {
       const totalOrderAmount = this.#originTotalPriceCalculator.calculate(orderItems);
-      let totalDiscount = this.#dDayDiscountCalculator.calculate(visitDate);
+      const dDayDiscountResult = this.#dDayDiscountCalculator.calculate(visitDate);
+      let totalDiscount = dDayDiscountResult.totalDiscount;
+      let discountsApplied = dDayDiscountResult.discountDetail ? [dDayDiscountResult.discountDetail] : [];
   
       const { totalDiscount: dailyDiscount, discountsApplied: dailyDiscountsApplied } = this.#dailyDiscountCalculator.calculate(visitDate, orderItems);
       totalDiscount += dailyDiscount;
-      let discountsApplied = [...dailyDiscountsApplied];
+      discountsApplied.push(...dailyDiscountsApplied);
   
       const { totalDiscount: specialDiscount, discountsApplied: specialDiscountsApplied } = this.#specialDiscountCalculator.calculate(visitDate);
       totalDiscount += specialDiscount;
