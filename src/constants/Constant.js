@@ -51,6 +51,10 @@ const BADGE_NAMES = Object.freeze({
   none: "없음"
 });
 
+const NEGATIVE_SIGN = '-';
+
+const ZERO_AMOUNT = '0';
+
 export {
   WOOTECO_MENU_PRICES,
   BEVERAGES_MENUS,
@@ -62,5 +66,7 @@ export {
   GIVEAWAY_EVENT_THRESHOLD,
   GIVEAWAY_ITEM,
   BADGE_THRESHOLDS,
-  BADGE_NAMES
+  BADGE_NAMES,
+  NEGATIVE_SIGN,
+  ZERO_AMOUNT
 }

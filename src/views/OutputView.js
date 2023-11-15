@@ -1,5 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
 import { GUIDE_MESSAGE, EVENT_TITLE } from "../constants/Message";
+import { NEGATIVE_SIGN, ZERO_AMOUNT } from "../constants/Constant";
 
 function formatCurrency(number) {
     return number.toLocaleString('ko-KR');
@@ -40,7 +41,12 @@ const OutputView = {
     },
 
     printTotalBenefitAmount(totalDiscount) {
-        Console.print(`${EVENT_TITLE.totalBenefitPrice}\n-${formatCurrency(totalDiscount)}${GUIDE_MESSAGE.unitMoney}\n`);
+        if (totalDiscount > 0) {
+            const formattedAmount = formatCurrency(totalDiscount);
+            Console.print(`${EVENT_TITLE.totalBenefitPrice}\n${NEGATIVE_SIGN}${formattedAmount}${GUIDE_MESSAGE.unitMoney}\n`);
+            return;
+        }
+        Console.print(`${EVENT_TITLE.totalBenefitPrice}\n${ZERO_AMOUNT}${GUIDE_MESSAGE.unitMoney}\n`);
     },
 
     printDiscountedTotalAmount(finalAmount) {
