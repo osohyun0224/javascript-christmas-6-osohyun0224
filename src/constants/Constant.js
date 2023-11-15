@@ -13,6 +13,8 @@ const WOOTECO_MENU_PRICES = Object.freeze({
   "샴페인": 25000
 });
 
+const BEVERAGES_MENUS = Object.freeze(['제로콜라', '레드와인', '샴페인']);
+
 const D_DAY_DISCOUNT = Object.freeze({
   startDay: 1,
   endDay: 25,
@@ -51,6 +53,7 @@ const BADGE_NAMES = Object.freeze({
 
 export {
   WOOTECO_MENU_PRICES,
+  BEVERAGES_MENUS,
   D_DAY_DISCOUNT,
   WOOTECO_MAIN_MENUS,
   WOOTECO_DESSERT_MENUS,

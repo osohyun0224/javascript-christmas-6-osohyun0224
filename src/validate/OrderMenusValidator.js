@@ -1,5 +1,5 @@
 import { ERROR_MESSAGE } from "../constants/Message";
-import { WOOTECO_MENU_PRICES } from "../constants/Constant";
+import { WOOTECO_MENU_PRICES, BEVERAGES_MENUS } from "../constants/Constant";
 
 class OrderMenusValidator {
   #orderItems;
@@ -39,7 +39,7 @@ class OrderMenusValidator {
   }
 
   #validateOnlyBeverages() {
-    const onlyBeverages = this.#orderItems.every(([item]) => ['제로콜라', '레드와인', '샴페인'].includes(item));
+    const onlyBeverages = this.#orderItems.every(([item]) => BEVERAGES_MENUS.includes(item));
     if (onlyBeverages) {
       throw new Error(ERROR_MESSAGE.invalidOrder);
     }
