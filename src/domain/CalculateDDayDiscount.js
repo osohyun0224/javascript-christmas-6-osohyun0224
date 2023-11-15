@@ -12,10 +12,10 @@ class CalculateDDayDiscount {
       const discountAmount = this.#calculateDiscount(visitDate);
       return {
         totalDiscount: discountAmount,
-        discountDetail: `${DISCOUNT_LABELS.dDayDiscount}${discountAmount}`
+        discountDetail: `${DISCOUNT_LABELS.dDayDiscount}${discountAmount}`,
       };
     }
-    return { totalDiscount: 0, discountDetail: '' };
+    return { totalDiscount: 0, discountDetail: "" };
   }
 
   #isEligibleForDiscount(visitDate) {
@@ -23,7 +23,9 @@ class CalculateDDayDiscount {
   }
 
   #calculateDiscount(visitDate) {
-    return this.#baseDiscount + (visitDate - this.#startDay) * this.#incrementPerDay;
+    return (
+      this.#baseDiscount + (visitDate - this.#startDay) * this.#incrementPerDay
+    );
   }
 }
 

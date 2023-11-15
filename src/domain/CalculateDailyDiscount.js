@@ -1,4 +1,7 @@
-import { WOOTECO_MAIN_MENUS, WOOTECO_DESSERT_MENUS } from "../constants/Constant";
+import {
+  WOOTECO_MAIN_MENUS,
+  WOOTECO_DESSERT_MENUS,
+} from "../constants/Constant";
 import { DISCOUNT_LABELS } from "../constants/Message";
 
 class CalculateDailyDiscount {
@@ -8,7 +11,11 @@ class CalculateDailyDiscount {
   #weekendDiscountPerItem;
   #weekdayDiscountPerItem;
 
-  constructor(menuPrices, weekendDiscountPerItem = 2023, weekdayDiscountPerItem = 2023) {
+  constructor(
+    menuPrices,
+    weekendDiscountPerItem = 2023,
+    weekdayDiscountPerItem = 2023,
+  ) {
     this.#menuPrices = menuPrices;
     this.#weekendItems = WOOTECO_MAIN_MENUS;
     this.#weekdayItems = WOOTECO_DESSERT_MENUS;
@@ -28,13 +35,18 @@ class CalculateDailyDiscount {
         discount = this.#weekendDiscountPerItem * quantity;
       }
 
-      if (!this.#isWeekend(visitDate) && this.#weekdayItems.includes(menuItem)) {
+      if (
+        !this.#isWeekend(visitDate) &&
+        this.#weekdayItems.includes(menuItem)
+      ) {
         discount = this.#weekdayDiscountPerItem * quantity;
       }
 
       if (discount > 0) {
         totalDiscount += discount;
-        const discountLabel = this.#isWeekend(visitDate) ? DISCOUNT_LABELS.weekendDiscount : DISCOUNT_LABELS.weekdayDiscount;
+        const discountLabel = this.#isWeekend(visitDate)
+          ? DISCOUNT_LABELS.weekendDiscount
+          : DISCOUNT_LABELS.weekdayDiscount;
         discountsApplied.push(`${discountLabel}${discount}`);
       }
     });

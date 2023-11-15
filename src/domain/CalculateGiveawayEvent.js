@@ -16,15 +16,19 @@ class CalculateGiveawayEvent {
     if (totalOrderAmount >= this.#minimumOrderAmount) {
       return {
         totalDiscount: this.#giftItemPrice,
-        discountsApplied: [`${DISCOUNT_LABELS.giveawayEvent}${this.#giftItemPrice}`],
-        giftedItem: this.#giftItem
+        discountsApplied: [
+          `${DISCOUNT_LABELS.giveawayEvent}${this.#giftItemPrice}`,
+        ],
+        giftedItem: this.#giftItem,
       };
     }
 
-    return { totalDiscount: 0, discountsApplied: [], giftedItem: GUIDE_MESSAGE.nothing };
+    return {
+      totalDiscount: 0,
+      discountsApplied: [],
+      giftedItem: GUIDE_MESSAGE.nothing,
+    };
   }
 }
 
 export default CalculateGiveawayEvent;
-
-

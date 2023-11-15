@@ -7,7 +7,7 @@ class CalculateEventBadge {
   calculate(totalDiscount) {
     if (totalDiscount >= this.#thresholds.santa) {
       return this.#badgeNames.santa;
-    } 
+    }
     if (totalDiscount >= this.#thresholds.tree) {
       return this.#badgeNames.tree;
     }
@@ -19,4 +19,3 @@ class CalculateEventBadge {
 }
 
 export default CalculateEventBadge;
-
