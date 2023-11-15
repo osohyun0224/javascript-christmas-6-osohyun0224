@@ -25,4 +25,8 @@ const ERROR_MESSAGE = Object.freeze({
   invalidOrder: "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요."
 });
 
-export { GUIDE_MESSAGE, EVENT_TITLE, ERROR_MESSAGE }
+const DISCOUNT_LABELS = Object.freeze({
+  specialDiscount: "특별 할인: -"
+});
+
+export { GUIDE_MESSAGE, EVENT_TITLE, ERROR_MESSAGE, DISCOUNT_LABELS };
