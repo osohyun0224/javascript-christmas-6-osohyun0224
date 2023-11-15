@@ -36,7 +36,7 @@ const SPECIAL_DISCOUNT_AMOUNT = 1000;
 
 const GIVEAWAY_EVENT_THRESHOLD = 120000;
 
-const GIVEAWAY_ITEM = "샴페인";
+const GIVEAWAY_ITEM = "샴페인 1개";
 
 const BADGE_THRESHOLDS = Object.freeze({
   star: 5000,

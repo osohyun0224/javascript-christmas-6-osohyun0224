@@ -1,5 +1,5 @@
 import { GIVEAWAY_EVENT_THRESHOLD, GIVEAWAY_ITEM } from "../constants/Constant";
-import { DISCOUNT_LABELS } from "../constants/Message";
+import { DISCOUNT_LABELS, GUIDE_MESSAGE } from "../constants/Message";
 
 class CalculateGiveawayEvent {
   #minimumOrderAmount;
@@ -9,7 +9,7 @@ class CalculateGiveawayEvent {
   constructor(menuPrices) {
     this.#minimumOrderAmount = GIVEAWAY_EVENT_THRESHOLD;
     this.#giftItem = GIVEAWAY_ITEM;
-    this.#giftItemPrice = menuPrices[this.#giftItem];
+    this.#giftItemPrice = menuPrices[this.#giftItem.split(" ")[0]];
   }
 
   calculate(totalOrderAmount) {
@@ -17,13 +17,14 @@ class CalculateGiveawayEvent {
       return {
         totalDiscount: this.#giftItemPrice,
         discountsApplied: [`${DISCOUNT_LABELS.giveawayEvent}${this.#giftItemPrice}`],
-        giftedItem: `${this.#giftItem} 1개`
+        giftedItem: this.#giftItem
       };
     }
 
-    return { totalDiscount: 0, discountsApplied: [], giftedItem: '없음' };
+    return { totalDiscount: 0, discountsApplied: [], giftedItem: GUIDE_MESSAGE.nothing };
   }
 }
 
 export default CalculateGiveawayEvent;
+
 
