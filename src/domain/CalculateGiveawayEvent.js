@@ -1,4 +1,5 @@
 import { GIVEAWAY_EVENT_THRESHOLD, GIVEAWAY_ITEM } from "../constants/Constant";
+import { DISCOUNT_LABELS } from "../constants/Message";
 
 class CalculateGiveawayEvent {
   #minimumOrderAmount;
@@ -15,7 +16,7 @@ class CalculateGiveawayEvent {
     if (totalOrderAmount >= this.#minimumOrderAmount) {
       return {
         totalDiscount: this.#giftItemPrice,
-        discountsApplied: [`증정 이벤트: -${this.#giftItemPrice}`],
+        discountsApplied: [`${DISCOUNT_LABELS.giveawayEvent}${this.#giftItemPrice}`],
         giftedItem: `${this.#giftItem} 1개`
       };
     }
@@ -25,3 +26,4 @@ class CalculateGiveawayEvent {
 }
 
 export default CalculateGiveawayEvent;
+
