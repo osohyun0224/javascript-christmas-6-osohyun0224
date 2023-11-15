@@ -16,45 +16,47 @@ const OutputView = {
     },
 
     printOrderMenu(orderItems) {
-        Console.print(`${EVENT_TITLE.orderMenu}\n${orderItems.map(item => `${item[0]} ${item[1]}${GUIDE_MESSAGE.unitCount}`).join('\n')}\n`);
+        Console.print(`${EVENT_TITLE.orderMenu}`);
+        Console.print(orderItems.map(item => `${item[0]} ${item[1]}${GUIDE_MESSAGE.unitCount}`).join('\n') + '\n');
     },
 
     printOriginTotalPrice(totalOrderAmount) {
-        Console.print(`${EVENT_TITLE.originTotalPrice}\n${formatCurrency(totalOrderAmount)}${GUIDE_MESSAGE.unitMoney}\n`);
+        Console.print(`${EVENT_TITLE.originTotalPrice}`);
+        Console.print(`${formatCurrency(totalOrderAmount)}${GUIDE_MESSAGE.unitMoney}\n`);
     },
 
     printGiveawayMenu(giftedItem) {
-        Console.print(`${EVENT_TITLE.giveawayMenu}\n${giftedItem}\n\n`);
+        Console.print(`${EVENT_TITLE.giveawayMenu}`);
+        Console.print(`${giftedItem}\n`);
     },
 
     printBenefitDetails(discountsApplied) {
+        Console.print(`${EVENT_TITLE.benefitDetails}`);
         if (discountsApplied.length > 0) {
             const formattedDiscounts = discountsApplied.map(discount => {
                 const discountAmount = parseInt(discount.match(/-?\d+/)[0], 10);
                 return `${discount.replace(/-?\d+/, formatCurrency(discountAmount))}${GUIDE_MESSAGE.unitMoney}`;
             });
-            Console.print(`${EVENT_TITLE.benefitDetails}\n${formattedDiscounts.join('\n')}`);
+            Console.print(formattedDiscounts.join('\n'));
             return;
         }
-        Console.print(`${EVENT_TITLE.benefitDetails}`);
         Console.print(`${GUIDE_MESSAGE.nothing}`);
     },
 
     printTotalBenefitAmount(totalDiscount) {
-        if (totalDiscount > 0) {
-            const formattedAmount = formatCurrency(totalDiscount);
-            Console.print(`${EVENT_TITLE.totalBenefitPrice}\n${NEGATIVE_SIGN}${formattedAmount}${GUIDE_MESSAGE.unitMoney}\n`);
-            return;
-        }
-        Console.print(`${EVENT_TITLE.totalBenefitPrice}\n${ZERO_AMOUNT}${GUIDE_MESSAGE.unitMoney}\n`);
+        Console.print(`${EVENT_TITLE.totalBenefitPrice}`);
+        const amountString = totalDiscount > 0 ? `${NEGATIVE_SIGN}${formatCurrency(totalDiscount)}` : `${ZERO_AMOUNT}`;
+        Console.print(`${amountString}${GUIDE_MESSAGE.unitMoney}\n`);
     },
 
     printDiscountedTotalAmount(finalAmount) {
-        Console.print(`${EVENT_TITLE.discountedTotalPrice}\n${formatCurrency(finalAmount)}${GUIDE_MESSAGE.unitMoney}\n`);
+        Console.print(`${EVENT_TITLE.discountedTotalPrice}`);
+        Console.print(`${formatCurrency(finalAmount)}${GUIDE_MESSAGE.unitMoney}\n`);
     },
 
     printEventBadge(badge) {
-        Console.print(`${EVENT_TITLE.eventBadge}\n${badge}`);
+        Console.print(`${EVENT_TITLE.eventBadge}`);
+        Console.print(`${badge}`);
     }
 };
 
