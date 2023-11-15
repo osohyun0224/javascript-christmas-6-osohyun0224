@@ -1,4 +1,5 @@
 import { WOOTECO_MAIN_MENUS, WOOTECO_DESSERT_MENUS } from "../constants/Constant";
+import { DISCOUNT_LABELS } from "../constants/Message";
 
 class CalculateDailyDiscount {
   #menuPrices;
@@ -33,7 +34,8 @@ class CalculateDailyDiscount {
 
       if (discount > 0) {
         totalDiscount += discount;
-        discountsApplied.push(`${this.#isWeekend(visitDate) ? '주말' : '평일'} 할인: -${discount}`);
+        const discountLabel = this.#isWeekend(visitDate) ? DISCOUNT_LABELS.weekendDiscount : DISCOUNT_LABELS.weekdayDiscount;
+        discountsApplied.push(`${discountLabel}${discount}`);
       }
     });
 

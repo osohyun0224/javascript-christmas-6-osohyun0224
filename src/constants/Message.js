@@ -27,7 +27,9 @@ const ERROR_MESSAGE = Object.freeze({
 
 const DISCOUNT_LABELS = Object.freeze({
   specialDiscount: "특별 할인: -",
-  giveawayEvent: "증정 이벤트: -"
+  giveawayEvent: "증정 이벤트: -",
+  weekendDiscount: "주말 할인: -",
+  weekdayDiscount: "평일 할인: -"
 });
 
 export { GUIDE_MESSAGE, EVENT_TITLE, ERROR_MESSAGE, DISCOUNT_LABELS };
